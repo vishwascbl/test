@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+Route::get('datatable',[App\Http\Controllers\DatatableIndexController::class,'index']);
+Route::post('get-datatable-vendors-home',[App\Http\Controllers\DatatableIndexController::class,'getVendorsAjax'])->name('get-datatable-vendors-home');
