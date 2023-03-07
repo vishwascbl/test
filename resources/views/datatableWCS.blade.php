@@ -9,7 +9,7 @@
     
 </head>
 <body>
-    
+
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
@@ -31,12 +31,16 @@
 
 $(document).ready(function() {
     $('#example').DataTable({
-        'processing': true,
-        'serverSide': true,
-        'serverMethod': 'post',
+        "destroy": true,
+        "scrollX": true,
+        "processing": true,
+        "serverSide": true,
+        "iDisplayLength": 20,
+        
         'ajax': {
             "url": "{{ route('get-datatable-vendors-home') }}",
-            dataSrc: 'data'
+            'type':'post',
+            dataSrc: 'data',
             // beforeSend: function() {
             //     $(".loader_box").show();
             // },
