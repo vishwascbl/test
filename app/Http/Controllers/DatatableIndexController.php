@@ -19,7 +19,6 @@ class DatatableIndexController extends Controller
     }
 
     public function getVendorsAjax(Request $request){
-        Log::info(json_encode($request->search));
         $data=Vendor::select('id','name','slug','address','email','phone_no','status')->get();
         return ['data'=>$data];
     }

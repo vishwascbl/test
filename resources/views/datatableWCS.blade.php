@@ -31,16 +31,16 @@
 
 $(document).ready(function() {
     $('#example').DataTable({
-        "destroy": true,
-        "scrollX": true,
+        // "destroy": true,
+        // "scrollX": true,
         "processing": true,
         "serverSide": true,
-        "iDisplayLength": 20,
+        // "iDisplayLength": 20,
         
         'ajax': {
             "url": "{{ route('get-datatable-vendors-home') }}",
             'type':'post',
-            dataSrc: 'data',
+            //dataSrc: 'data',
             // beforeSend: function() {
             //     $(".loader_box").show();
             // },
